@@ -11,3 +11,7 @@ In both of the Parts, i.e., Implementation and Evaluation, we used various techn
 ## Data Clean Room Overview
 
 ![ubuntu_confidential_vm_jammy](./dcr_src/ubuntu_confidential_vm_jammy.png)
+![remote_attestation](./dcr_src/remote_attestation.png)\
+![docker_live](./dcr_src/docker_live.png) ![docker_running_status](./dcr_src/docker_running_status.png)
+
+---
