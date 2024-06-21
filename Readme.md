@@ -8,3 +8,6 @@ In both of the Parts, i.e., Implementation and Evaluation, we used various techn
 
 ---
 
+## Data Clean Room Overview
+
+![ubuntu_confidential_vm_jammy](./dcr_src/ubuntu_confidential_vm_jammy.png)
