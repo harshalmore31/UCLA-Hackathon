@@ -1,6 +1,6 @@
 # UCLA-Hackathon
 
-#### Overview 
+### Overview 
 
 Highlighting the main theme of this event  of utilizing Generative AI to empower “Data Collaboration Intelligence”. We developed a data sharing platform that allows private data sharing, predictive analytics and model building among different data parties, in essence, the “Data Clean Room” to enhance Click-through Rate (CTR) predictions using privacy-preserving synthetic data.
 
@@ -10,6 +10,11 @@ In both of the Parts, i.e., Implementation and Evaluation, we used various techn
 
 ## Data Clean Room Overview
 
+Our secure Data Clean Room (DCR) uses Microsoft Azure Confidential VMs (Cloud VM) for enhanced data protection. These C VMs utilize Trusted Execution Environment (TEE) technology, specifically Intel® TDX and SGX , to create a secure enclave for processing data and cryptographically isolate and protect your data confidentiality and integrity.
+These C VM’s have virtual Trusted Platform Modules (vTPM) built-in, and also combining the use tpm2-tools we can setup enables Remote Attestation ( which creates the keys),required for verifying that the environment is trustable.
+For additional security, our programs are containerized using Docker. Containerization isolates applications from the underlying system and other applications, minimizing potential vulnerabilities.
+While this approach focuses on data-in-use security, we acknowledge the importance of protecting data at rest and in transit. To achieve this, we plan to implement Azure storage encryption for data at rest and secure transfer protocols like FTPS for data transfers
+
 ![ubuntu_confidential_vm_jammy](./dcr_src/ubuntu_confidential_vm_jammy.png)
 ![remote_attestation](./dcr_src/remote_attestation.png)
 |![docker_live](./dcr_src/docker_live.png) |  ![docker_running_status](./dcr_src/docker_running_status.png)|
@@ -18,6 +23,10 @@ In both of the Parts, i.e., Implementation and Evaluation, we used various techn
 ---
 
 ## Data Evaluation
+
+We aim to derive insights about potential customers by analyzing various aspects of user behavior and demographics. The following insights can help ad agencies better understand their potential customers and refine their advertising strategies to increase engagement and conversion rates.
+We aimed to train a predictive model with the following parameters - Identifying Potential Customers, Incorporating Diverse Attributes, Probability Prediction. which utilizes a comprehensive set of attributes, including audience demographics, news content attributes, advertisement attributes, and device attributes, to enhance the prediction accuracy and predicts the probability that a given audience member will become a potential customer based on the aforementioned attributes, enabling more targeted and effective advertising strategies.
+
 |![age_grp_distribution](./data_eval_src/age_grp_distribution.jpg) | ![daily_engagement_ctr](./data_eval_src/daily_engagement_ctr.jpg)|
 |:-------------------------------------------:|:-------------------------------------------:|
 | ![hourly_engagement_ctr](./data_eval_src/hourly_engagement_ctr.jpg)| ![location_users_ctr](./data_eval_src/location_users_ctr.jpg)                             |
