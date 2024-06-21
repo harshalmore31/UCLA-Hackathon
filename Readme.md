@@ -15,3 +15,11 @@ In both of the Parts, i.e., Implementation and Evaluation, we used various techn
 ![docker_live](./dcr_src/docker_live.png) ![docker_running_status](./dcr_src/docker_running_status.png)
 
 ---
+
+## Data Evaluation
+
+![age_grp_distribution](./data_eval_src/age_grp_distribution.jpg)
+![daily_engagement_ctr](./data_eval_src/daily_engagement_ctr.jpg)
+![hourly_engagement_ctr](./data_eval_src/hourly_engagement_ctr.jpg)
+![location_users_ctr](./data_eval_src/location_users_ctr.jpg)
+![top_devices_distr](./data_eval_src/top_devices_distr.jpg)
