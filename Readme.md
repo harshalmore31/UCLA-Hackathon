@@ -30,4 +30,4 @@ We aimed to train a predictive model with the following parameters - Identifying
 |![age_grp_distribution](./data_eval_src/age_grp_distribution.jpg) | ![daily_engagement_ctr](./data_eval_src/daily_engagement_ctr.jpg)|
 |:-------------------------------------------:|:-------------------------------------------:|
 | ![hourly_engagement_ctr](./data_eval_src/hourly_engagement_ctr.jpg)| ![location_users_ctr](./data_eval_src/location_users_ctr.jpg)                             |
-![top_devices_distr](./data_eval_src/top_devices_distr.jpg)
+| ![top_devices_distr](./data_eval_src/top_devices_distr.jpg) | ![potential_customer_ctr](./data_eval_src/potential_customer_ctr.jpg)|
