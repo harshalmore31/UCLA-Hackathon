@@ -1,5 +1,8 @@
 # UCLA-Hackathon
 
+Presentation : ![Trustworthy AI Lab x GES UCLA Hackathon - Team BitBuilders](./Trustworthy%20AI%20Lab%20x%20GES%20UCLA%20Hackathon.pptx)
+
+---
 ### Overview 
 
 Highlighting the main theme of this event  of utilizing Generative AI to empower “Data Collaboration Intelligence”. We developed a data sharing platform that allows private data sharing, predictive analytics and model building among different data parties, in essence, the “Data Clean Room” to enhance Click-through Rate (CTR) predictions using privacy-preserving synthetic data.
@@ -31,3 +34,15 @@ We aimed to train a predictive model with the following parameters - Identifying
 |:-------------------------------------------:|:-------------------------------------------:|
 | ![hourly_engagement_ctr](./data_eval_src/hourly_engagement_ctr.jpg)| ![location_users_ctr](./data_eval_src/location_users_ctr.jpg)                             |
 | ![top_devices_distr](./data_eval_src/top_devices_distr.jpg) | ![potential_customer_ctr](./data_eval_src/potential_customer_ctr.jpg)|
+
+---
+
+##### Team Name: BitBuilders
+
+Team Leader: Arnav Sonavane
+
+Members:
+Manas Sewatkar
+Aarian Thakur
+Harshal More
+Devdatta Talele
