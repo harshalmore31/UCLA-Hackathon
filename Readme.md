@@ -37,12 +37,12 @@ We aimed to train a predictive model with the following parameters - Identifying
 
 ---
 
-##### Team Name: BitBuilders
+ Team Name: BitBuilders
 
 Team Leader: Arnav Sonavane
 
 Members:
-Manas Sewatkar
-Aarian Thakur
-Harshal More
-Devdatta Talele
+- Manas Sewatkar
+- Aarian Thakur
+- Harshal More
+- Devdatta Talele
