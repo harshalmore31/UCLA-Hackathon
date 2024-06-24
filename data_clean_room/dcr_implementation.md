@@ -4,5 +4,14 @@
  
  Why Data Clean Room ?
  - 
-
- Why Cloud 
+ Why Confidential Computing ?
+ - 
+How to achive Confidential Computing ?
+- 
+Approach via using Cloud Confidential VM instead of locally ?
+- 
+Using Azure Cloud Confidential VM ?
+- 
+Brief info on Azure Cloud CVM 
+- https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq
+Setup DCR on Azure CVM
