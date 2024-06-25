@@ -42,6 +42,10 @@ Azure Portal:
 - Select your chosen Confidential VM offering and configure settings like size, storage, and networking.
 - During configuration, enable features like "Trusted Launch" or "Secure Enclave" depending on the chosen TEE technology (SGX or SEV-SNP).
 
+[Azure_Cloud_Confidential_VM_Image](./dcr_src/ubuntu_confidential_vm_jammy.png)
+
+Link to setup Azure Cloud Confidential VM : https://azuremarketplace.microsoft.com/en-us/marketplace/apps/canonical.0001-com-ubuntu-confidential-vm-jammy?tab=overview
+
 Configure Network Security:
 - Implement security groups on your VM to restrict inbound and outbound traffic, ensuring only authorized communication occurs.
 
