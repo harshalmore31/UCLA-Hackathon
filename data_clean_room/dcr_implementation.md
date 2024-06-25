@@ -64,6 +64,12 @@ Install Software:
 - TEE libraries specific to your chosen technology (Intel SGX SDK or AMD SEV libraries) for secure data processing within the enclave.
 - Containerization tools like Docker to package your application components for easier management.
 
+### Benefits of Docker Containers:
+
+- Isolation: Docker containers provide additional isolation for your data clean room application, further enhancing security.
+- Portability: Docker images package your application and its dependencies, simplifying deployment across different environments.
+- Resource Management: Containers share the underlying operating system of the VM, optimizing resource utilization.
+
 #### Setup Tools
 ```sh
 sudo apt install tpm2-tools -y
