@@ -214,7 +214,7 @@ tpm2_checkquote \
      3. Fill out the necessary fields, ensuring that Azure Virtual Machines can access secrets.
      4. Review and create the Key Vault.
      5. Alternatively, you can create an Azure Key Vault using the command line:
-        ```
+        ```sh
         az keyvault create --name <your-key-vault-name> --resource-group <your-resource-group> --location <your-location>
         ```
      6. Define proper policies to restrict access based on your multi-party data sharing scenario.
@@ -222,13 +222,13 @@ tpm2_checkquote \
 #### Sending Evidence to the Remote Key/Secret Server:
    - Access the Key Vault using Azure SDKs, CLI, or REST API.
    - Import an existing Attestation Key (AK) into the Key Vault:
-     ```
+     ```sh
      az keyvault key import --vault-name <your-key-vault-name> --name <your-key-name> --pem-file mykey.pem
      ```
 
 #### Getting the Encrypted Wrapper Key via TLS from the Key Server into the Clean Room (TEE):
    - Download the encrypted wrapper key from the Key Vault using Azure CLI:
-     ```
+     ```sh
      az keyvault key download --vault-name <your-key-vault-name> --name <your-key-name> --file <path-to-save-key>
      ```
    - Use this key to decrypt the model and data within the TEE.
