@@ -64,11 +64,47 @@ Install Software:
 - TEE libraries specific to your chosen technology (Intel SGX SDK or AMD SEV libraries) for secure data processing within the enclave.
 - Containerization tools like Docker to package your application components for easier management.
 
-### Benefits of Docker Containers:
+### Using Docker Containers:
 
 - Isolation: Docker containers provide additional isolation for your data clean room application, further enhancing security.
 - Portability: Docker images package your application and its dependencies, simplifying deployment across different environments.
 - Resource Management: Containers share the underlying operating system of the VM, optimizing resource utilization.
+
+
+#### Setup Docker 
+
+```sh
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+Install docker pkg's
+
+```sh
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+#### Container Image Development:
+
+Develop Docker images that encapsulate your data clean room functionalities.
+These images can include:
+Your application code for data preprocessing, model training, and analysis.
+Libraries like Pandas, scikit-learn, and SMPC libraries (e.g., SCALE-ML, PySyft) for data manipulation and privacy-preserving computations.
+TEE libraries (e.g., Intel SGX SDK) to interact with the secure enclave for sensitive data processing.
+Consider using multi-stage builds to optimize the final image size.
+
+[Docker_Image](./Dockerfile)
 
 #### Setup Tools
 ```sh
@@ -107,18 +143,6 @@ first we need to hash the data, then extend it to PCR
 tpm2_pcrread sha1:0,1,2+sha256:0,1,2
 ```
 
-
 ---
-wh
----
-docker container benefits and uses
-- 
-docker effect on data security
-- 
-docker setup
-- 
-docker running
-- 
-sources 
-- 
 
+Sources
