@@ -2,21 +2,9 @@
 
 ## Secure Multiparty Data Sharing with Confidential Computing
 
-Data Clean Rooms provide a secure space for companies to collaborate on data analysis without revealing private user information.
-Ideal for scenarios where multiple parties need to combine data for better insights.
-Publishers and advertisers can improve ad targeting while maintaining user privacy.
-By anonymizing data within a controlled environment, Data Clean Rooms reduce privacy risks and ensure compliance with regulations.
-This approach allows for richer data analysis and more accurate models.
-While keeping user data confidential, companies can gain valuable insights.
-Data Clean Rooms strike a balance between data utility and privacy.
-Enabling collaboration and innovation while respecting user trust.
+Data Clean Rooms provide a secure environment for collaborative data analysis without revealing private user information. They allow multiple parties to combine data for better insights while maintaining privacy. By anonymizing data within controlled spaces, Data Clean Rooms reduce privacy risks and ensure compliance with regulations. This approach enables richer data analysis and more accurate models while respecting user trust.
 
-Confidential computing uses Trusted Execution Environments (TEEs) like Intel® TDX and SGX to create secure enclaves within processors. 
-These enclaves protect data confidentiality and integrity, even if the system is compromised.
-Imagine a locked vault inside your computer for processing sensitive information.
-This technology is ideal for Virtual Machines (VMs), enabling secure data processing on shared hardware.
-It's like having multiple secure computers running on one physical machine.
-Secure enclaves ensure your data remains protected throughout processing.
+Confidential computing leverages Trusted Execution Environments (TEEs) like Intel® TDX and SGX. These enclaves create secure spaces within processors, protecting data confidentiality and integrity even if the system is compromised. Think of it as having locked vaults inside your computer for processing sensitive information. Confidential computing is ideal for Virtual Machines (VMs), enabling secure data processing on shared hardware.
 
 Confidential computing relies on Trusted Execution Environments (TEEs) built into modern processors like Intel® SGX and TDX. These TEEs act like secure vaults within the processor, protecting data confidentiality and integrity even in a compromised system.
 
@@ -232,9 +220,6 @@ tpm2_checkquote \
      az keyvault key download --vault-name <your-key-vault-name> --name <your-key-name> --file <path-to-save-key>
      ```
    - Use this key to decrypt the model and data within the TEE.
-
-#### Manipulating Data:
-   - The model training and creation of synthetic data are covered in the second part of your submission.
 
 #### Encrypting Output Data Leaving the Clean Room
    - Modify your code to run the encryption function on specified files.
