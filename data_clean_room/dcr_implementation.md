@@ -11,7 +11,6 @@ While keeping user data confidential, companies can gain valuable insights.
 Data Clean Rooms strike a balance between data utility and privacy.
 Enabling collaboration and innovation while respecting user trust.
 
-
 Confidential computing uses Trusted Execution Environments (TEEs) like Intel® TDX and SGX to create secure enclaves within processors. 
 These enclaves protect data confidentiality and integrity, even if the system is compromised.
 Imagine a locked vault inside your computer for processing sensitive information.
@@ -26,7 +25,6 @@ Here's how to achieve confidential computing:
 - Develop your application to utilize TEE libraries (e.g., Intel SGX SDK).
 - Design your code to process sensitive data within the secure TEE enclave.
 - TEEs handle computations, keeping your data encrypted and isolated from the rest of the system.
-
 
 Cloud Confidential VMs offer a simpler approach to confidential computing compared to local setups. Here's why:
 
@@ -43,11 +41,67 @@ Using Azure Cloud Confidential VM ?
 - Cloud Expertise: Benefit from Microsoft's security expertise for a potentially more secure environment.
 
 
-Brief info on Azure Cloud CVM 
+Azure confidential virtual machines FAQ about is security and confidentiality.
 - https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq
 
-Setup DCR on Azure CVM
--
+Choose a Confidential VM offering: Azure offers various Confidential VM configurations with Intel SGX or AMD SEV-SNP support. Select a VM size that meets your processing needs and budget.
+
+### Create a Cloud Confidential VM:
+
+Azure Portal:
+- Navigate to the "Virtual Machines" service in the Azure portal.
+- Click "Add" to create a new VM.
+- Select your chosen Confidential VM offering and configure settings like size, storage, and networking.
+- During configuration, enable features like "Trusted Launch" or "Secure Enclave" depending on the chosen TEE technology (SGX or SEV-SNP).
+
+Configure Network Security:
+- Implement security groups on your VM to restrict inbound and outbound traffic, ensuring only authorized communication occurs.
+
+Install Software:
+- Connect to your Azure VM using Remote Desktop or SSH.
+- Install the necessary software stack for your data clean room functionality. This might include:
+- Python and data science libraries (Pandas, scikit-learn) for data handling and anonymization.
+- TEE libraries specific to your chosen technology (Intel SGX SDK or AMD SEV libraries) for secure data processing within the enclave.
+- Containerization tools like Docker to package your application components for easier management.
+
+#### Setup Tools
+```sh
+sudo apt install tpm2-tools -y
+```
+#### Create Endorsement Key (EK)
+Initialize the TPM by creating an Endorsement Key:
+```sh
+tpm2_createek --ek-context rsa_ek.ctx --key-algorithm rsa --public rsa_ek.pub
+```
+#### Create Attestation Key (AK)
+Create an Attestation Key derived from the EK, used for signing quotes and attestations:
+```sh
+tpm2_createak \
+   --ek-context rsa_ek.ctx \
+   --ak-context rsa_ak.ctx \
+   --key-algorithm rsa \
+   --hash-algorithm sha256 \
+   --signing-algorithm rsassa \
+   --public rsa_ak.pub \
+   --private rsa_ak.priv \
+   --ak-name rsa_ak.name
+```
+####  Save the AK's Public Key
+Save the Attestation Key's public key from each confidential VM into a remote key/attestation server for future verification.
+
+### PCR
+Platform Configuration Registers (PCRs) are unique elements within the TPM2 that can only be updated using a hashing mechanism. This one-way update process guarantees the integrity of your code.
+
+#### Initialize PCR
+First, read the PCR values to establish a baseline:
+
+#### Extending values into PCR
+first we need to hash the data, then extend it to PCR
+```sh
+tpm2_pcrread sha1:0,1,2+sha256:0,1,2
+```
+
+
 ---
 wh
 ---
