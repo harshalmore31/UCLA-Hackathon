@@ -44,7 +44,8 @@ Azure Portal:
 
 ![Azure_Cloud_Confidential_VM_Image](./dcr_src/ubuntu_confidential_vm_jammy.png)
 
-Link to setup Azure Cloud Confidential VM : https://azuremarketplace.microsoft.com/en-us/marketplace/apps/canonical.0001-com-ubuntu-confidential-vm-jammy?tab=overview
+Link to setup Azure Cloud Confidential VM : 
+https://azuremarketplace.microsoft.com/en-us/marketplace/apps/canonical.0001-com-ubuntu-confidential-vm-jammy?tab=overview
 
 Configure Network Security:
 - Implement security groups on your VM to restrict inbound and outbound traffic, ensuring only authorized communication occurs.
@@ -88,16 +89,51 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 #### Container Image Development:
 
-Develop Docker images that encapsulate your data clean room functionalities.
-These images can include:
-Your application code for data preprocessing, model training, and analysis.
-Libraries like Pandas, scikit-learn, and SMPC libraries (e.g., SCALE-ML, PySyft) for data manipulation and privacy-preserving computations.
-TEE libraries (e.g., Intel SGX SDK) to interact with the secure enclave for sensitive data processing.
-Consider using multi-stage builds to optimize the final image size.
+Develop Docker images that encapsulate your data clean room functionalities
 
-![Docker_Image](./Dockerfile)
+[Docker_Image](./Dockerfile)
 
-> Setup Tools in Container 
+Description:
+### Docker Image Description
+
+This Docker image sets up a secure data clean room environment with the following components:
+
+1. **Base Image and Tools**:
+   - **Base**: Uses `ubuntu:22.04`.
+   - **Tools**: Installs essential tools like `wget`, `curl`, `vim`, `git`, `python3.9`, `pip`, and `tpm2-tools`.
+
+2. **Python and JupyterLab**:
+   - **Python Libraries**: Installs `pandas` and `numpy` for data manipulation.
+   - **JupyterLab**: Installs and configures JupyterLab for remote access.
+
+3. **Intel SGX Setup**:
+   - **SGX Packages**: Installs `sgx-dcap-pccs` and `sgx-pck-id-retrieval-tool` for creating secure enclaves.
+
+4. **Node.js and PCCS Server**:
+   - **Node.js**: Installs Node.js to run the PCCS server.
+   - **PCCS Configuration**: Sets up PCCS server configurations and SSL keys.
+
+5. **User Configuration**:
+   - **User**: Adds a new user (`ubuntu`) with appropriate permissions.
+
+6. **TPM Initialization**:
+   - **Key Creation**: Creates TPM Endorsement Key (EK) and Attestation Key (AK).
+   - **PCR Baseline**: Reads PCR values for integrity checks.
+
+7. **Service Execution**:
+   - Runs both JupyterLab and the PCCS server concurrently.
+
+### Summary of Functionalities
+
+- **Data Preprocessing and Analysis**: Includes `pandas` and `numpy` for data manipulation and analysis.
+- **Secure Enclave Interaction**: Uses Intel SGX libraries for secure data processing.
+- **Remote Attestation**: Uses TPM tools for environment integrity verification.
+- **Optimized Builds**: Can be extended with multi-stage builds to reduce final image size.
+
+This Docker image provides a comprehensive and secure setup for data processing and analysis within a confidential computing environment.
+
+> How the tpm-tools will work  inside container Container 
+The
 
 #### Setup Tools
 ```sh
@@ -121,6 +157,7 @@ tpm2_createak \
    --private rsa_ak.priv \
    --ak-name rsa_ak.name
 ```
+
 ####  Save the AK's Public Key
 Save the Attestation Key's public key from each confidential VM into a remote key/attestation server for future verification.
 
@@ -232,3 +269,8 @@ tpm2_checkquote \
 ---
 
 Sources
+
+https://gist.github.com/kenplusplus/f025d04047bc044e139d105b4c708d78#file-gistfile1-md
+https://github.com/cc-api/confidential-cloud-native-primitives/blob/main/container/pccs/Dockerfile
+https://github.com/Azure/confidential-computing-cvm-guest-attestation?tab=readme-ov-file
+https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq
