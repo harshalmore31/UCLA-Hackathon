@@ -36,7 +36,13 @@ Cloud Confidential VMs offer a simpler approach to confidential computing compar
 While local setups offer more control, cloud Confidential VMs provide a quicker and potentially more secure option for leveraging TEEs.
 
 Using Azure Cloud Confidential VM ?
-- 
+- Pre-built Security: Utilize pre-configured VMs with built-in TEE (Trusted Execution Environment) technology like Intel SGX or AMD SEV-SNP.
+- Simple Setup: Skip local TEE library installation and configuration complexities.
+- Secure Enclave: Isolate sensitive data processing within the secure enclave of the TEE, protecting confidentiality and integrity.
+- Scalability: Easily scale your resources up or down as needed based on your workload.
+- Cloud Expertise: Benefit from Microsoft's security expertise for a potentially more secure environment.
+
+
 Brief info on Azure Cloud CVM 
 - https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq
 
