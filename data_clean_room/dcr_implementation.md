@@ -42,7 +42,7 @@ Azure Portal:
 - Select your chosen Confidential VM offering and configure settings like size, storage, and networking.
 - During configuration, enable features like "Trusted Launch" or "Secure Enclave" depending on the chosen TEE technology (SGX or SEV-SNP).
 
-[Azure_Cloud_Confidential_VM_Image](./dcr_src/ubuntu_confidential_vm_jammy.png)
+![Azure_Cloud_Confidential_VM_Image](./dcr_src/ubuntu_confidential_vm_jammy.png)
 
 Link to setup Azure Cloud Confidential VM : https://azuremarketplace.microsoft.com/en-us/marketplace/apps/canonical.0001-com-ubuntu-confidential-vm-jammy?tab=overview
 
@@ -95,7 +95,7 @@ Libraries like Pandas, scikit-learn, and SMPC libraries (e.g., SCALE-ML, PySyft)
 TEE libraries (e.g., Intel SGX SDK) to interact with the secure enclave for sensitive data processing.
 Consider using multi-stage builds to optimize the final image size.
 
-[Docker_Image](./Dockerfile)
+![Docker_Image](./Dockerfile)
 
 > Setup Tools in Container 
 
