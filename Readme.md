@@ -2,7 +2,7 @@
 
 Presentation : ![Trustworthy AI Lab x GES UCLA Hackathon - Team BitBuilders](./Trustworthy%20AI%20Lab%20x%20GES%20UCLA%20Hackathon.pptx)
 
-![Implementation of DCR](./data_clean_room/dcr_implementation.md)
+- [Implementation of DCR](./data_clean_room/dcr_implementation.md)
 ---
 ### Overview 
 

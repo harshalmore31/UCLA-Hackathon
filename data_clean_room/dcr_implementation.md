@@ -270,7 +270,7 @@ tpm2_checkquote \
 
 Sources
 
-https://gist.github.com/kenplusplus/f025d04047bc044e139d105b4c708d78#file-gistfile1-md
-https://github.com/cc-api/confidential-cloud-native-primitives/blob/main/container/pccs/Dockerfile
-https://github.com/Azure/confidential-computing-cvm-guest-attestation?tab=readme-ov-file
-https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq
+- https://gist.github.com/kenplusplus/f025d04047bc044e139d105b4c708d78#file-gistfile1-md
+- https://github.com/cc-api/confidential-cloud-native-primitives/blob/main/container/pccs/Dockerfile
+- https://github.com/Azure/confidential-computing-cvm-guest-attestation?tab=readme-ov-file
+- https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq
