@@ -70,7 +70,6 @@ Install Software:
 - Portability: Docker images package your application and its dependencies, simplifying deployment across different environments.
 - Resource Management: Containers share the underlying operating system of the VM, optimizing resource utilization.
 
-
 #### Setup Docker 
 
 ```sh
@@ -105,6 +104,8 @@ TEE libraries (e.g., Intel SGX SDK) to interact with the secure enclave for sens
 Consider using multi-stage builds to optimize the final image size.
 
 [Docker_Image](./Dockerfile)
+
+> Setup Tools in Container 
 
 #### Setup Tools
 ```sh
@@ -142,6 +143,72 @@ first we need to hash the data, then extend it to PCR
 ```sh
 tpm2_pcrread sha1:0,1,2+sha256:0,1,2
 ```
+Ensure both data and models are encrypted before uploading to the Trusted Execution Environment (TEE).
+
+#### Extend Values into PCR Indices
+To ensure the integrity of a client's code, hash the code and extend it into the PCR.
+
+Hashing Data
+Replace CRITICAL-DATA with your actual data and code:
+```sh
+export SHA256_DATA=$(echo "CRITICAL-DATA" | openssl dgst -sha256 -binary | xxd -p -c 32)
+export SHA1_DATA=$(echo "CRITICAL-DATA" | openssl dgst -sha1 -binary | xxd -p -c 20)
+```
+Verify the hash values:
+```sh
+# env | grep SHA1
+SHA1_DATA=39739bfcd59c10bc8b220398a4c868dbe41c455c
+
+# env | grep SHA256
+SHA256_DATA=ab805369897acf5a4536130b2d8799d6bcb9506de0f490b656ff7037f360a005
+```
+#### Extending to PCR
+Extend the hash values to the PCR:
+```sh
+tpm2_pcrextend 0:sha1=$SHA1_DATA,sha256=$SHA256_DATA
+tpm2_pcrextend 1:sha1=$SHA1_DATA,sha256=$SHA256_DATA
+tpm2_pcrextend 2:sha1=$SHA1_DATA,sha256=$SHA256_DATA
+```
+Read the PCR values again to verify the extension:
+```sh
+tpm2_pcrread sha1:0,1,2+sha256:0,1,2
+```
+
+#### Create Quote from PCR Values
+Define a 'golden state' PCR, which represents the 'good state' of the software and data, using the tpm2_quote tool. This should be done in a trusted execution environment like the confidential VM.
+```sh
+export SERVICE_PROVIDER_NONCE="12345678"
+
+tpm2_quote \
+--key-context rsa_ak.ctx \
+--pcr-list sha1:0,1,2+sha256:0,1,2 \
+--message pcr_quote.plain \
+--signature pcr_quote.signature \
+--qualification $SERVICE_PROVIDER_NONCE \
+--hash-algorithm sha256 \
+--pcr pcr.bin
+
+export GOLDEN_PCR=$(cat pcr.bin | openssl dgst -sha256 -binary | xxd -p -c 32)
+```
+#### Evaluate PCR Values
+
+Verify the Quote
+Verify the quote to ensure the integrity and authenticity of the environment:
+
+```sh
+export SERVICE_PROVIDER_NONCE="12345678"
+
+tpm2_checkquote \
+--public rsa_ak.pub \
+--message pcr_quote.plain \
+--signature pcr_quote.signature \
+--qualification $SERVICE_PROVIDER_NONCE \
+--pcr pcr.bin
+```
+
+
+
+
 
 ---
 
