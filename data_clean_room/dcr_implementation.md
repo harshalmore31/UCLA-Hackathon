@@ -1,32 +1,40 @@
 # Implementation of DCR (Data Clean Room)
 
-### Secure Multiparty Data Sharing with Confidential Computing
+## Secure Multiparty Data Sharing with Confidential Computing
 
-Data Clean Rooms provide a secure space for companies to collaborate on data analysis without revealing private user information. This is ideal for scenarios where multiple parties need to combine data for better insights, where publishers and advertisers want to improve ad targeting. By anonymizing data within a controlled environment, Data Clean Rooms reduce privacy risks and ensure compliance with regulations. This approach allows for richer data analysis and more accurate models while keeping user data confidential.
-
- Confidential computing uses Trusted Execution Environments (TEEs) like Intel® TDX and SGX to create secure enclaves within processors. These enclaves act like isolated compartments that protect the confidentiality and integrity of your data, even if the underlying system is compromised. Imagine a locked vault inside your computer for processing sensitive information. This technology is ideal for VMs (Virtual Machines) as it allows secure data processing within the virtual environment, even on shared hardware. It's like having multiple secure computers running on one physical machine.
-
-Hardware Requirements: 
-- Ensure your system supports TEE technology. 
-- Look for processors with built-in TEEs, like Intel® SGX or TDX.
-
-Software Stack: Choose a software stack that integrates with your chosen TEE. 
-Popular options include:
-- Intel SGX SDK: Provides tools for developing applications that leverage Intel SGX enclaves.
-- Fortanix SGX Platform: Offers a comprehensive platform for managing and securing applications within SGX enclaves.
-- Microsoft Azure Confidential Computing: Cloud-based services that leverage TEEs for secure data processing in Azure VMs.
-- Google Cloud Confidential Computing: Cloud services offering TEE-enabled VMs for secure workloads on Google Cloud Platform.
-- Develop Secure Code: Integrate TEE libraries into your application code to leverage the secure enclave for sensitive computations. 
-
-This might involve learning specific APIs and programming paradigms for trusted execution environments.
-
-Deployment: Deploy your application on a platform that supports your chosen TEE technology. This could involve:
-- Setting up a local development environment with the necessary libraries and tools.
-- Utilizing cloud platforms that offer TEE-enabled VMs for secure deployment.
+Data Clean Rooms provide a secure space for companies to collaborate on data analysis without revealing private user information.
+Ideal for scenarios where multiple parties need to combine data for better insights.
+Publishers and advertisers can improve ad targeting while maintaining user privacy.
+By anonymizing data within a controlled environment, Data Clean Rooms reduce privacy risks and ensure compliance with regulations.
+This approach allows for richer data analysis and more accurate models.
+While keeping user data confidential, companies can gain valuable insights.
+Data Clean Rooms strike a balance between data utility and privacy.
+Enabling collaboration and innovation while respecting user trust.
 
 
-Approach via using Cloud Confidential VM instead of locally ?
-- 
+Confidential computing uses Trusted Execution Environments (TEEs) like Intel® TDX and SGX to create secure enclaves within processors. 
+These enclaves protect data confidentiality and integrity, even if the system is compromised.
+Imagine a locked vault inside your computer for processing sensitive information.
+This technology is ideal for Virtual Machines (VMs), enabling secure data processing on shared hardware.
+It's like having multiple secure computers running on one physical machine.
+Secure enclaves ensure your data remains protected throughout processing.
+
+Confidential computing relies on Trusted Execution Environments (TEEs) built into modern processors like Intel® SGX and TDX. These TEEs act like secure vaults within the processor, protecting data confidentiality and integrity even in a compromised system.
+
+Here's how to achieve confidential computing:
+- Leverage cloud platforms or hardware that supports TEEs.
+- Develop your application to utilize TEE libraries (e.g., Intel SGX SDK).
+- Design your code to process sensitive data within the secure TEE enclave.
+- TEEs handle computations, keeping your data encrypted and isolated from the rest of the system.
+
+
+Cloud Confidential VMs offer a simpler approach to confidential computing compared to local setups. Here's why:
+
+- Pre-configured Environment: Cloud providers manage the TEE infrastructure, eliminating the need for local installation and configuration of TEE libraries.
+- Scalability and Flexibility: Cloud VMs offer easy scaling based on your needs, while local setups might require additional hardware investment.
+- Security Expertise: Cloud providers have expertise in securing their infrastructure, potentially enhancing overall security compared to a local environment.
+While local setups offer more control, cloud Confidential VMs provide a quicker and potentially more secure option for leveraging TEEs.
+
 Using Azure Cloud Confidential VM ?
 - 
 Brief info on Azure Cloud CVM 
