@@ -18,9 +18,9 @@ These C VM’s have virtual Trusted Platform Modules (vTPM) built-in, and also c
 For additional security, our programs are containerized using Docker. Containerization isolates applications from the underlying system and other applications, minimizing potential vulnerabilities.
 While this approach focuses on data-in-use security, we acknowledge the importance of protecting data at rest and in transit. To achieve this, we plan to implement Azure storage encryption for data at rest and secure transfer protocols like FTPS for data transfers
 
-![ubuntu_confidential_vm_jammy](./dcr_src/ubuntu_confidential_vm_jammy.png)
-![remote_attestation](./dcr_src/remote_attestation.png)
-|![docker_live](./dcr_src/docker_live.png) |  ![docker_running_status](./dcr_src/docker_running_status.png)|
+![ubuntu_confidential_vm_jammy](./data_clean_room/dcr_src/ubuntu_confidential_vm_jammy.png)
+![remote_attestation](./data_clean_room/dcr_src/remote_attestation.png)
+|![docker_live](./data_clean_room/dcr_src/docker_live.png) |  ![docker_running_status](./data_clean_room/dcr_src/docker_running_status.png)|
 |:-------------------------------------------:|:-------------------------------------------:|
 
 ---
