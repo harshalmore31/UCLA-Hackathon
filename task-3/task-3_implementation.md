@@ -37,6 +37,8 @@ This project implements a Deep Convolutional Generative Adversarial Network (DCG
 ### Output
 
 - The script will create CSV files named `synthetic_data_epoch_{epoch}.csv`, containing the generated synthetic data at specified epochs.
+    Epoch interval= 2000
+    ![epochs](./epochs.jpg)
 
 ## Customization
 
