@@ -1,8 +1,8 @@
-## Deep DreamGAN: Generating Synthetic Data from Dataset
+## Deep GAN: Generating Synthetic Data from Dataset
 
 ### Description:
 
-This project implements a Deep Convolutional Generative Adversarial Network (DCGAN) to generate synthetic data that resembles real-world dreamscript data from the provided "merged_train_data.csv" file. The model is designed to capture the underlying statistical distribution of the dataset and produce realistic, high-quality samples.
+This project implements a Deep Convolutional Generative Adversarial Network (DCGAN) to generate synthetic data that resembles real-world  script data from the provided "merged_train_data.csv" file. The model is designed to capture the underlying statistical distribution of the dataset and produce realistic, high-quality samples.
 
 #### Key Features:
 - Efficient Preprocessing: Handles missing values, converts data to appropriate numerical types, and performs label encoding and standardization for both categorical and numerical features.
@@ -24,7 +24,7 @@ Necessary libraries (install using pip install pandas numpy tensorflow keras skl
         Place the "merged_train_data.csv" file in the project directory.
 2. Execution:
         Run the Python script (e.g., main.py) to initiate training. The script will:
-        Load and preprocess the dreamscript data.
+        Load and preprocess the script data.
         Build and compile the DCGAN model.
         Train the GAN for a specified number of epochs.
         Generate and save synthetic data samples at regular intervals.
