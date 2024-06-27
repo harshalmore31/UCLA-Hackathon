@@ -1,4 +1,4 @@
-```markdown
+
 # User Feature Distribution Analysis for Ad Clicks (Handling Missing Values and Single Plot)
 
 ## Description
@@ -160,4 +160,3 @@ This section outlines the steps to create a single plot for a specific feature:
 ## Conclusion
 
 These Python scripts provide a flexible framework for analyzing user feature distributions in ad click datasets. Whether you need detailed comparisons across multiple features or a focused analysis of a single feature, the provided code can be adapted to meet your needs. Remember to handle missing values and errors appropriately to ensure accurate and robust analyses.
-```
