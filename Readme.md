@@ -31,10 +31,10 @@ While this approach focuses on data-in-use security, we acknowledge the importan
 We aim to derive insights about potential customers by analyzing various aspects of user behavior and demographics. The following insights can help ad agencies better understand their potential customers and refine their advertising strategies to increase engagement and conversion rates.
 We aimed to train a predictive model with the following parameters - Identifying Potential Customers, Incorporating Diverse Attributes, Probability Prediction. which utilizes a comprehensive set of attributes, including audience demographics, news content attributes, advertisement attributes, and device attributes, to enhance the prediction accuracy and predicts the probability that a given audience member will become a potential customer based on the aforementioned attributes, enabling more targeted and effective advertising strategies.
 
-|![age_grp_distribution](./data_eval_src/age_grp_distribution.jpg) | ![daily_engagement_ctr](./data_eval_src/daily_engagement_ctr.jpg)|
+|![age_grp_distribution](./data_eval_src/image%20copy.png) | ![daily_engagement_ctr](./data_eval_src/image%20copy%202.png)|
 |:-------------------------------------------:|:-------------------------------------------:|
-| ![hourly_engagement_ctr](./data_eval_src/hourly_engagement_ctr.jpg)| ![location_users_ctr](./data_eval_src/location_users_ctr.jpg)                             |
-| ![top_devices_distr](./data_eval_src/top_devices_distr.jpg) | ![potential_customer_ctr](./data_eval_src/potential_customer_ctr.jpg)|
+| ![hourly_engagement_ctr](./data_eval_src/image%20copy.png)| ![location_users_ctr](./data_eval_src/image%20copy%203.png)|
+| ![top_devices_distr](./data_eval_src/image%20copy%204.png) | ![potential_customer_ctr](./data_eval_src/potential_customer_ctr.jpg)|
 
 ---
 
