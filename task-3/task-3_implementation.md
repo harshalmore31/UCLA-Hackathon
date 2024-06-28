@@ -53,3 +53,9 @@ This project implements a Deep Convolutional Generative Adversarial Network (DCG
 - Integrate visualization tools (e.g., TensorBoard) for detailed monitoring of training progress and generated samples.
 - Consider applying the generated synthetic data to downstream tasks, such as anomaly detection or data augmentation.
 
+
+|![absolute_log_mean](./src/absolute_log_mean.jpg) | ![cum_sums_per](./src/cum_sums_per.jpg)|
+|:-------------------------------------------:|:-------------------------------------------:|
+| ![cum_sums_per_fea](./src/cum_sums_per_fea.jpg)| ![cumson](./src/cumson.jpg)|
+| ![distribution_per_feature](./src/distribution_per_feature.jpg) | ![real_fake](./src/real_fake.jpg)|
+| ![real_fake_diff](./src/real_fake_difference.jpg) | |
